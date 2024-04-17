@@ -1,0 +1,49 @@
+<mvc:View
+    controllerName="com.app.demoui5.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <VBox id="idVBoxFirstNumber">
+        <!-- First Number -->
+        <Label
+            id="idLabelFirstNumber"
+            labelFor="idFirstNumber"
+            text="Enter the First Number"
+        />
+        <Input
+            id="idFirstNumber"
+            type="Number"
+            value=""
+            placeholder="Enter a number"
+            width="20%"
+        />
+    </VBox>
+
+    <VBox id="idVBoxForSecond">
+        <items>
+            <!-- Second Number -->
+            <Label
+                id="idLabelSecondNumber"
+                labelFor="idSecondNumber"
+                text="Enter the Second Number"
+            />
+            <Input
+                id="idSecondNumber"
+                type="Number"
+                value=""
+                placeholder="Enter a Number"
+                width="20%"
+            />
+        </items>
+    </VBox>
+    <Button
+        id="idCalculateButton"
+        text="Claculate"
+        press="onCalculate"
+    />
+    <Button
+        id="idInitiateJsonModel"
+        text="Initiate Json Model"
+        press="onInitiateJsonModel"
+    />
+</mvc:View>
