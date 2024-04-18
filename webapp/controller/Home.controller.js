@@ -10,6 +10,16 @@ sap.ui.define([
 
         return Controller.extend("com.app.demoui5.controller.Home", {
             onInit: function () {
+                const oPerson = {
+                    employee: {
+                        EmployeeName: "John Doe",
+                        EmployeeAge: 40,
+                        ContractStarted: new Date(),
+                        Email: "john.doe@gmail.com"
+                    }
+                }
+                const oJsonModel = new JSONModel(oPerson);
+                this.getView().setModel(oJsonModel, "employeeModel");
 
             },
             onCalculate: function () {
@@ -22,33 +32,6 @@ sap.ui.define([
                 const iResult = iFirstNumber + iSecondNumber;
                 // Print The Result
                 alert(iResult)
-            },
-            onInitiateJsonModel: function () {
-                const oPerson = {
-                    details: {
-                        name: "Rohan",
-                        age: 50
-                    },
-                    salDetails: {
-                        ctc: "1LPA"
-                    }
-                }
-
-                const oPerson1 = {
-                    details: {
-                        name: "John",
-                        age: 50
-                    },
-                    salDetails: {
-                        ctc: "10LPA"
-                    }
-                }
-                debugger;
-                const oJsonModel = new JSONModel(oPerson);
-                const oLocalModel = new JSONModel(oPerson1);
-                this.getView().setModel(oJsonModel);
-                this.getView().setModel(oLocalModel, "LocalModel");
-                console.log(oJsonModel);
             }
         });
     });
