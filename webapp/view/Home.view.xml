@@ -3,39 +3,18 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:l="sap.ui.layout"
-    xmlns:f="sap.ui.layout.form"
     xmlns:core="sap.ui.core"
 >
-    <Table items="{/employee/}" alternateRowColors="true" growing="true" growingThreshold="5" growingScrollToLoad="true">
-        <columns>
-            <Column >
-                <header>
-                    <Title text="Employee Name"></Title>
-                </header>
-            </Column>
-            <Column >
-                <header>
-                    <Title text="Employee DOB"></Title>
-                </header>
-            </Column>
-            <Column >
-                <header>
-                    <Title text="Employee Email"></Title>
-                </header>
-            </Column>
-            <Column >
-                <header>
-                    <Title text="Employee Gender"></Title>
-                </header>
-            </Column>
-        </columns>
-        <items>
-            <ColumnListItem >
-                <Text text="{fName} {lName}"></Text>
-                <Text text="{DOB}"></Text>
-                <Text text="{email}"></Text>
-                <Text text="{gender}"></Text>
-            </ColumnListItem>
-        </items>
-    </Table>
+    <!-- We use some bitwise/Ternary operator  a ? b : c -->
+    <!-- {= ${field} === 40 ? true : false } -->
+    <!-- {= ${Expression} || ${Expression} || ${Expression}   }  -->
+    <!-- {= ${Expression} &amp;&amp; ${Expression} &amp;&amp; ${Expression}   }  -->
+
+    <l:VerticalLayout id="idVerticalLayout" binding="{/person}">
+        <Input value="{EmployeeName}"></Input>
+        <Input value="{EmployeeAge}"></Input>
+        <Input value="{ContractStarted}"></Input>
+        <Input value="{Email}"></Input>
+        <Button text="Submit" press="onSubmitData"/>
+    </l:VerticalLayout>
 </mvc:View>
