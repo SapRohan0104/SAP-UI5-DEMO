@@ -32,6 +32,11 @@ sap.ui.define([
                 const iResult = iFirstNumber + iSecondNumber;
                 // Print The Result
                 alert(iResult)
+            },
+            onSubmitData: function(){
+                const oModel = this.getView().getModel();
+                const oPerson = oModel.getProperty("/person");
+                console.log(oPerson);
             }
         });
     });
